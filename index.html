@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Личные заметки студента о специальности «Финансовая безопасность»: зачем пошёл, что реально учат, как проходит практика и киберучения 2026 года.">
+<title>Финансовая безопасность — моя специальность | Заметки студента</title>
+<style>
+  :root{
+    --bg:#070d18;
+    --bg-2:#0d1730;
+    --card:#111e38;
+    --line:rgba(120,160,255,.18);
+    --text:#e9f0ff;
+    --muted:#9db2d6;
+    --accent:#2ee6a8;
+    --accent-2:#ffc44d;
+    --radius:1.25rem;
+    --shadow:0 1.25rem 3rem rgba(2,6,20,.55);
+  }
+
+  *,
+  *::before,
+  *::after{box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:clamp(1rem,.95rem + .2vw,1.08rem);
+    line-height:1.7;
+    color:var(--text);
+    background:
+      radial-gradient(circle at 12% 8%,rgba(46,230,168,.16),transparent 45%),
+      radial-gradient(circle at 88% 0%,rgba(255,196,77,.14),transparent 42%),
+      linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%);
+    background-attachment:fixed;
+    min-height:100vh;
+  }
+
+  img{max-width:100%;}
+
+  a{color:var(--accent);text-decoration:underline dotted;text-underline-offset:.22em;}
+  a:hover{color:var(--accent-2);}
+
+  /* ---------- Шапка ---------- */
+  .site-header{
+    padding:clamp(1.25rem,3vw,3rem) clamp(1rem,4vw,3rem) 0;
+  }
+
+  .header-inner{
+    max-width:75rem;
+    margin:0 auto;
+    padding:clamp(1.25rem,3vw,2.75rem);
+    border:1px solid var(--line);
+    border-radius:calc(var(--radius) * 1.4);
+    background:linear-gradient(135deg,rgba(46,230,168,.16),rgba(255,196,77,.10) 55%,rgba(17,30,56,.92));
+    box-shadow:var(--shadow);
+  }
+
+  .eyebrow{
+    margin:0 0 .75rem;
+    font-size:.82rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+
+  h1{
+    margin:0 0 1rem;
+    font-size:clamp(1.8rem,1.2rem + 2.6vw,3.1rem);
+    line-height:1.15;
+    letter-spacing:-.02em;
+    background:linear-gradient(100deg,#ffffff,#a8ffe0 55%,#ffd98a);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+
+  .lead{
+    margin:0;
+    max-width:60ch;
+    color:var(--muted);
+    font-size:1.05em;
+  }
+
+  /* ---------- Навигация ---------- */
+  .site-nav{
+    max-width:75rem;
+    margin:clamp(.75rem,2vw,1.25rem) auto 0;
+  }
+
+  .site-nav ul{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.4rem;
+    margin:0;
+    padding:.45rem;
+    list-style:none;
+    background:rgba(17,30,56,.85);
+    border:1px solid var(--line);
+    border-radius:1.25rem;
+    box-shadow:var(--shadow);
+  }
+
+  .site-nav li{margin:0;}
+
+  .site-nav a{
+    display:block;
+    padding:.5rem 1rem;
+    border-radius:.9rem;
+    font-size:.95rem;
+    font-weight:600;
+    color:var(--text);
+    text-decoration:none;
+    transition:background .25s ease,color .25s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus-visible{
+    background:var(--accent);
+    color:#06121f;
+  }
+
+  /* ---------- Макет ---------- */
+  .layout{
+    max-width:75rem;
+    margin:clamp(1.25rem,3vw,2.5rem) auto;
+    padding:0 clamp(1rem,4vw,3rem);
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(16rem,20rem);
+    gap:clamp(1rem,2vw,1.75rem);
+    align-items:start;
+  }
+
+  .layout > section{
+    grid-column:1;
+    display:flex;
+    flex-direction:column;
+    gap:clamp(1rem,2vw,1.5rem);
+  }
+
+  .panel{
+    padding:clamp(1.1rem,2.4vw,2rem);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(22,38,74,.95),rgba(17,30,56,.95));
+    box-shadow:var(--shadow);
+  }
+
+  article{
+    padding:clamp(.9rem,2vw,1.5rem);
+    border:1px solid rgba(120,160,255,.12);
+    border-radius:calc(var(--radius) * .8);
+    background:rgba(9,18,36,.55);
+  }
+
+  article + article{margin-top:1rem;}
+
+  /* ---------- Типографика ---------- */
+  h2{
+    margin:0 0 1rem;
+    padding-left:.8rem;
+    border-left:.3rem solid var(--accent);
+    font-size:clamp(1.35rem,1rem + 1.3vw,2rem);
+    line-height:1.25;
+    letter-spacing:-.01em;
+  }
+
+  h3{
+    margin:0 0 .6rem;
+    font-size:clamp(1.1rem,.95rem + .6vw,1.4rem);
+    line-height:1.3;
+    color:var(--accent-2);
+  }
+
+  p{margin:0 0 .85rem;}
+
+  p:last-child,
+  ul:last-child,
+  ol:last-child{margin-bottom:0;}
+
+  ul,
+  ol{margin:0 0 1rem;padding-left:1.4rem;}
+
+  li{margin-bottom:.35rem;}
+
+  li:last-child{margin-bottom:0;}
+
+  ul > li::marker{color:var(--accent);}
+
+  ol > li::marker{color:var(--accent-2);font-weight:700;}
+
+  blockquote{
+    margin:1rem 0 0;
+    padding:1rem 1.25rem;
+    border-left:.3rem solid var(--accent-2);
+    border-radius:0 .9rem .9rem 0;
+    background:rgba(255,196,77,.09);
+    color:#f6ebd2;
+    font-style:italic;
+  }
+
+  blockquote p{margin:0;}
+
+  mark{
+    padding:0 .3em;
+    border-radius:.35em;
+    background:var(--accent);
+    color:#06121f;
+    font-weight:600;
+  }
+
+  /* ---------- Медиа и раскрывающиеся блоки ---------- */
+  figure{
+    margin:1rem 0 0;
+    padding:.6rem;
+    border:1px solid var(--line);
+    border-radius:calc(var(--radius) * .8);
+    background:rgba(6,14,28,.7);
+  }
+
+  figure img{
+    display:block;
+    width:100%;
+    height:auto;
+    border-radius:calc(var(--radius) * .55);
+  }
+
+  figcaption{
+    margin-top:.6rem;
+    font-size:.88rem;
+    line-height:1.5;
+    color:var(--muted);
+    text-align:center;
+  }
+
+  details{
+    margin-top:1rem;
+    padding:.65rem 1rem;
+    border:1px dashed rgba(46,230,168,.45);
+    border-radius:.9rem;
+    background:rgba(46,230,168,.07);
+  }
+
+  summary{
+    cursor:pointer;
+    font-weight:600;
+    color:var(--accent);
+  }
+
+  details p,
+  details ul{margin:.7rem 0 0;}
+
+  /* ---------- Боковая колонка ---------- */
+  .sidebar{
+    grid-column:2;
+    grid-row:1 / span 3;
+    position:sticky;
+    top:1rem;
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    padding:clamp(1.1rem,2.4vw,1.75rem);
+    border:1px solid rgba(46,230,168,.35);
+    border-radius:var(--radius);
+    background:linear-gradient(180deg,rgba(46,230,168,.12),rgba(17,30,56,.97));
+    box-shadow:var(--shadow);
+  }
+
+  .sidebar h2{
+    font-size:clamp(1.15rem,.95rem + .7vw,1.45rem);
+  }
+
+  address{
+    font-style:normal;
+    padding:.9rem 1rem;
+    border:1px solid rgba(120,160,255,.15);
+    border-radius:.9rem;
+    background:rgba(6,14,28,.6);
+    color:var(--muted);
+    line-height:1.6;
+  }
+
+  address a{color:var(--accent);}
+
+  /* ---------- Подвал ---------- */
+  .site-footer{
+    max-width:75rem;
+    margin:0 auto clamp(1.5rem,4vw,3rem);
+    padding:0 clamp(1rem,4vw,3rem);
+  }
+
+  .footer-inner{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem 2rem;
+    justify-content:space-between;
+    align-items:center;
+    padding:clamp(1rem,2.5vw,1.5rem) clamp(1.1rem,2.5vw,2rem);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:rgba(17,30,56,.9);
+    box-shadow:var(--shadow);
+  }
+
+  .footer-inner p{
+    margin:0;
+    font-size:.92rem;
+    color:var(--muted);
+  }
+
+  .footer-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+
+  .footer-links a{
+    font-size:.92rem;
+    font-weight:600;
+    text-decoration:none;
+  }
+
+  .footer-links a:hover{
+    color:var(--accent-2);
+    text-decoration:underline;
+  }
+
+  /* ---------- Адаптивность ---------- */
+  @media (max-width:56em){
+    .layout{grid-template-columns:1fr;}
+    .layout > section{grid-column:1;}
+    .sidebar{
+      grid-column:1;
+      grid-row:auto;
+      position:static;
+    }
+  }
+
+  @media (max-width:34em){
+    .site-nav ul{border-radius:1rem;}
+    .site-nav a{padding:.45rem .7rem;font-size:.88rem;}
+    .footer-inner{
+      flex-direction:column;
+      align-items:flex-start;
+    }
+    h1{letter-spacing:-.01em;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <p class="eyebrow">Личный сайт · 3 курс · Финансовая безопасность</p>
+    <h1>Моя специальность — финансовая безопасность</h1>
+    <p class="lead">Коротко: я учусь искать деньги, которые пытаются спрятаться, и объяснять на человеческом языке, почему это не паранойя, а работа. Дальше — без красивых слов, как есть.</p>
+  </div>
+  <nav class="site-nav" aria-label="Основная навигация">
+    <ul>
+      <li><a href="#why">Как я сюда попал</a></li>
+      <li><a href="#study">Что реально учим</a></li>
+      <li><a href="#practice">Практика</a></li>
+      <li><a href="#contacts">Совет абитуриенту</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="layout">
+
+  <section id="why" class="panel">
+    <h2>Как я сюда попал</h2>
+
+    <article>
+      <h3>Честно: случайно, но не жалею</h3>
+      <p>На дне открытых дверей я пришёл смотреть экономический факультет, а ушёл с буклетом кафедры финансовой безопасности. На стенде сидел преподаватель и на салфетке рисовал, как мошенники дробят платежи на мелкие куски, чтобы никто не заметил. Салфетку я, к сожалению, не сохранил, но мысль запомнил: тут придётся думать, а не заучивать.</p>
+      <p>Родители спросили: «Это охранником, что ли?» Нет. Это скорее про то, чтобы замечать странное в отчётах раньше, чем оно станет заголовком новостей. Иногда скучно. Иногда — совсем нет. Если хочется понять, во что это превращается к третьему курсу, можно сразу прыгнуть в раздел <a href="#study">про учёбу</a>.</p>
+      <figure>
+        <img src="img-1.png" alt="Преподаватель у белой доски рисует маркером схему денежных переводов, стрелки ведут к одному подозрительному счёту, рядом приклеены жёлтые стикеры">
+        <figcaption>Та самая салфетка, только на доске: схема дробления платежей на первой лекции.</figcaption>
+      </figure>
+    </article>
+
+    <article>
+      <h3>Что оказалось неожиданным</h3>
+      <p>Думал, будет про деньги. Оказалось — про людей. Половина пар — это «а как вы это объясните руководству?» и «а как вы это докажете в суде?». Формулы есть, но чаще нужно уметь задать неудобный вопрос и не сдаться, когда тебе отвечают «так исторически сложилось».</p>
+      <ul>
+        <li>Первая пара по праву — и сразу закон № 115-ФЗ, который читается как инструкция к стиральной машине на японском.</li>
+        <li>На информатике мы не «учили кнопки», а разбирали фишинговые письма, которые реально приходят бухгалтерам.</li>
+        <li>На финмониторинге дали выписку на 400 операций и попросили найти три подозрительные. Я нашёл четыре. Две были не те.</li>
+      </ul>
+      <blockquote>
+        <p>«Если вы нашли нарушение, но не можете объяснить его на человеческом языке, — вы его не нашли». — наш куратор, первая консультация по курсовой</p>
+      </blockquote>
+    </article>
+  </section>
+
+  <section id="study" class="panel">
+    <h2>Что реально делаем на парах</h2>
+
+    <article>
+      <h3>Предметы, которые пригодились</h3>
+      <p>Список в учебном плане выглядит скучно, пока не начнёшь применять его к живым задачам. Вот что реально выстрелило.</p>
+      <ol>
+        <li>Финансовый мониторинг — учимся видеть дробление платежей и схемы с фиктивными контрагентами.</li>
+        <li>Аудит и внутренний контроль — проверяем контрагентов, иногда быстрее, чем это делает служба безопасности компании, куда мы потом идём на практику.</li>
+        <li>Кибергигиена — многофакторная аутентификация, менеджеры паролей, разбор инцидентов. Да, это тоже про финансы: деньги теперь цифры.</li>
+        <li>Экономико-правовой анализ — читаем нормативку и учимся писать заключения, которые не стыдно показать.</li>
+      </ol>
+      <p><mark>Стресс-тесты</mark> — моё любимое. Дают сценарий «а что, если крупный клиент уйдёт завтра» и просят посчитать, когда кончится ликвидность. Считаешь, краснеешь и понимаешь, почему в отчётах у взрослых дядь и тёть такие серьёзные лица.</p>
+      <figure>
+        <img src="img-2.png" alt="Ноутбук с плотной таблицей транзакций, распечатка выписки с жёлтым маркером, стикеры и остывший кофе на студенческом столе">
+        <figcaption>Типичный вечер перед сдачей: 400 строк, три подозрительные операции и один остывший кофе.</figcaption>
+      </figure>
+    </article>
+
+    <article>
+      <h3>Инструменты, без которых никуда</h3>
+      <p>Про «софт» говорят много, но по факту всё скромнее и надёжнее.</p>
+      <ul>
+        <li>Excel и SQL — да, Excel всё ещё жив, и это не шутка.</li>
+        <li>Python — для тех, кто хочет автоматизировать поиск аномалий, а не щёлкать вручную.</li>
+        <li>BI-панели — чтобы показать начальнику одну понятную картинку вместо тридцати вкладок.</li>
+        <li>Голова и упрямство — без них первые три пункта бесполезны.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="practice" class="panel">
+    <h2>Практика: как это выглядит вживую</h2>
+
+    <article>
+      <h3>Киберучения «Белый щит — 2026»</h3>
+      <p>Материалы к командному этапу обновили <time datetime="2026-11-18">18 ноября 2026 года</time>, а сам этап пройдёт <time datetime="2026-12-10">10 декабря 2026 года</time>. Три часа, один инцидент, четыре человека в команде и очень мало сна накануне.</p>
+      <p>В прошлом году мы провалили первый раунд: схему нашли, а заключение оформили так, что юрист команды сказал: «Ребят, это не доказательство, это настроение». В этом году обещали исправиться. Тренируемся писать коротко и по делу — для людей, которые будут читать это в одиннадцать вечера.</p>
+      <figure>
+        <img src="img-3.png" alt="Четверо студентов в аудитории разбирают на большом экране цепочку связанных счетов, один показывает маркером на подозрительный узел">
+        <figcaption>Учения: пока не нарисуешь цепочку — не поймёшь, где деньги свернули не туда.</figcaption>
+      </figure>
+      <details>
+        <summary>Что в сценарии этого года?</summary>
+        <ul>
+          <li>легенда о фиктивном поставщике с признаками дробления платежей;</li>
+          <li>поток транзакций, в котором спрятаны три аномалии;</li>
+          <li>итоговый отчёт для регулятора и короткая записка для руководства.</li>
+        </ul>
+      </details>
+    </article>
+  </section>
+
+  <aside id="contacts" class="sidebar">
+    <h2>Совет абитуриенту</h2>
+    <p>Три вопроса, которые стоит задать на дне открытых дверей. Мне в своё время ответили на них не сразу.</p>
+    <ul>
+      <li>Есть ли лаборатория, где реально работают с транзакциями, а не только показывают презентации?</li>
+      <li>Кто ведёт комплаенс — практик или только теоретик?</li>
+      <li>Куда уходят на практику и возвращаются ли оттуда?</li>
+    </ul>
+    <details>
+      <summary>А стоит ли вообще идти сюда?</summary>
+      <p>Если любите, когда всё просто и однозначно, — не стоит. Тут часто ответ «зависит». Если готовы к «зависит» и умеете копать до конца — заходите.</p>
+    </details>
+    <address>
+      Приёмная комиссия кафедры<br>
+      ул. Финансовая, 12, ауд. 305<br>
+      Иркутск, 664003<br>
+      <a href="mailto:finbez@example.ru">finbez@example.ru</a><br>
+      <a href="tel:+7924000000">+7 (924) 000-00-00</a>
+    </address>
+  </aside>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>&copy; 2026 · Учебный проект по веб-разметке. Обновлено <time datetime="2026-11-24">24 ноября 2026 года</time>.</p>
+    <ul class="footer-links">
+      <li><a href="#why">Как я сюда попал</a></li>
+      <li><a href="#study">Что реально учим</a></li>
+      <li><a href="#contacts">Совет абитуриенту</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
